@@ -131,7 +131,8 @@ BOOL Ctest_vtlistctrlexDlg::OnInitDialog()
 	m_list.set_header_text_align(3, HDF_LEFT);
 	*/
 	m_list.set_column_data_type(list_score, CVtListCtrlEx::column_data_type_percentage_grid);
-	m_list.allow_edit(false);
+	m_list.allow_edit(true);
+	m_list.allow_one_click_edit(true);
 
 	srand(time(NULL));
 
