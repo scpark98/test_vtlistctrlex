@@ -21,8 +21,6 @@ class Ctest_vtlistctrlexDlg : public CDialogEx
 public:
 	Ctest_vtlistctrlexDlg(CWnd* pParent = NULL);	// standard constructor
 
-													//This is the database we using
-	//std::deque<CListData> m_list_db;
 	CResizeCtrl		m_resize;
 
 	enum list_column
@@ -39,7 +37,10 @@ public:
 	enum { IDD = IDD_TEST_VTLISTCTRLEX_DIALOG };
 #endif
 
-	protected:
+protected:
+	void init_list();
+
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
 
 

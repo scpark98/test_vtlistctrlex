@@ -113,34 +113,13 @@ BOOL Ctest_vtlistctrlexDlg::OnInitDialog()
 	m_resize.Add(IDOK, 100, 100, 0, 0);
 	m_resize.Add(IDCANCEL, 100, 100, 0, 0);
 
-	m_list.set_headings(_T("No,50;Name,150;Slogan,200;Score,100;Memo,200"));
-	m_list.set_header_height(30);
-	m_list.set_color_theme(CVtListCtrlEx::color_theme_dark_gray);
-	//m_list.set_line_height(theApp.GetProfileInt( _T("list name"), _T("line height"), 80));
-	m_list.load_column_width(&theApp, _T("list name"));
-	m_list.set_font_size(theApp.GetProfileInt( _T("file list"), _T("font size"), 9 ));
-	m_list.set_font_name(theApp.GetProfileString( _T("file list"), _T("font name"), _T("¸¼Àº °íµñ") ));
-	//m_list.set_column_text_align(0, HDF_CENTER);
-	//m_list.set_column_text_align(0, HDF_CENTER);
-	//m_list.set_column_text_align(1, HDF_CENTER);
-	//m_list.set_column_text_align(2, HDF_CENTER);
-	/*
-	m_list.set_header_text_align(0, HDF_CENTER);
-	m_list.set_header_text_align(1, HDF_CENTER);
-	m_list.set_header_text_align(2, HDF_CENTER);
-	m_list.set_header_text_align(3, HDF_LEFT);
-	*/
-	m_list.set_column_data_type(list_score, CVtListCtrlEx::column_data_type_percentage_grid);
-	m_list.allow_edit(true);
-	m_list.allow_one_click_edit(true);
+	init_list();
 
-	srand(time(NULL));
+	int i, index;
 
-	int index;
-
-	for(int i=0; i<100; i++)
+	for(i = 0; i < 100; i++)
 	{
-		int index = m_list.add_item(i2S(i));
+		index = m_list.add_item(i2S(i));
 		m_list.set_text(index, list_name, RandomText::GetName());
 		//m_list.set_text_color(index, 0, RGB(index, index, index));//random19937(RGB(0,0,0), RGB(255,255,255)));
 		m_list.set_text(index, list_slogan, RandomText::GetSlogan());
@@ -157,6 +136,31 @@ BOOL Ctest_vtlistctrlexDlg::OnInitDialog()
 
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void Ctest_vtlistctrlexDlg::init_list()
+{
+	m_list.set_headings(_T("No,50;Name,150;Slogan,200;Score,100;Memo,200"));
+	m_list.set_header_height(40);
+	//m_list.set_color_theme(CVtListCtrlEx::color_theme_dark_gray);
+	m_list.set_color_theme(CVtListCtrlEx::color_theme_light_blue);
+	m_list.set_line_height(30);// theApp.GetProfileInt(_T("list name"), _T("line height"), 30));
+	m_list.load_column_width(&theApp, _T("list name"));
+	m_list.set_font_size(14);// theApp.GetProfileInt(_T("file list"), _T("font size"), 9));
+	m_list.set_font_name(_T("¸¼Àº °íµñ"));
+	//m_list.set_column_text_align(0, HDF_CENTER);
+	//m_list.set_column_text_align(0, HDF_CENTER);
+	//m_list.set_column_text_align(1, HDF_CENTER);
+	//m_list.set_column_text_align(2, HDF_CENTER);
+	/*
+	m_list.set_header_text_align(0, HDF_CENTER);
+	m_list.set_header_text_align(1, HDF_CENTER);
+	m_list.set_header_text_align(2, HDF_CENTER);
+	m_list.set_header_text_align(3, HDF_LEFT);
+	*/
+	m_list.set_column_data_type(list_score, CVtListCtrlEx::column_data_type_percentage_grid);
+	m_list.allow_edit(true);
+	m_list.allow_one_click_edit(true);
 }
 
 void Ctest_vtlistctrlexDlg::OnSysCommand(UINT nID, LPARAM lParam)
