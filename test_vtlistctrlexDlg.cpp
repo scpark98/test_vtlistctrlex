@@ -10,6 +10,8 @@
 #include "../../Common/MemoryDC.h"
 #include "../../Common/RandomText.h"
 
+#include "PopupDlg.h"
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -108,10 +110,13 @@ BOOL Ctest_vtlistctrlexDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
-	m_resize.Create(this);
-	m_resize.Add(IDC_LIST, 0, 0, 100, 100);
-	m_resize.Add(IDOK, 100, 100, 0, 0);
-	m_resize.Add(IDCANCEL, 100, 100, 0, 0);
+	//m_resize.Create(this);
+	//m_resize.Add(IDC_LIST, 0, 0, 100, 100);
+	//m_resize.Add(IDOK, 100, 100, 0, 0);
+	//m_resize.Add(IDCANCEL, 100, 100, 0, 0);
+
+	CPopupDlg dlg;
+	dlg.DoModal();
 
 	init_list();
 
@@ -132,7 +137,7 @@ BOOL Ctest_vtlistctrlexDlg::OnInitDialog()
 	m_list.set_item_color(10, 1, red, blue);
 	m_list.set_item_color(3, 0, deeppink, dodgerblue);
 
-	RestoreWindowPosition(&theApp, this);
+	//RestoreWindowPosition(&theApp, this);
 
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -158,6 +163,7 @@ void Ctest_vtlistctrlexDlg::init_list()
 	m_list.set_header_text_align(2, HDF_CENTER);
 	m_list.set_header_text_align(3, HDF_LEFT);
 	*/
+	m_list.set_column_data_type(list_no, CVtListCtrlEx::column_data_type_numeric);
 	m_list.set_column_data_type(list_score, CVtListCtrlEx::column_data_type_percentage_grid);
 	m_list.allow_edit(true);
 	m_list.allow_one_click_edit(true);
@@ -224,7 +230,10 @@ HCURSOR Ctest_vtlistctrlexDlg::OnQueryDragIcon()
 
 void Ctest_vtlistctrlexDlg::OnBnClickedOk()
 {
-	uint64_t size = get_folder_size(_T("H:\\2022 06 20"));
+	CPopupDlg dlg;
+	dlg.DoModal();
+
+	//uint64_t size = get_folder_size(_T("H:\\2022 06 20"));
 	//m_list.random();
 	//m_list.ensure_visible(50, CVtListCtrlEx::visible_last, 3);
 	/*

@@ -16,6 +16,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{a47b151b-d5a5-49d0-bef0-2e8599878c54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common\VtListCtrlEx">
+      <UniqueIdentifier>{7a393d2f-0160-483e-af73-f8fccf5dd751}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -51,20 +54,23 @@
     <ClInclude Include="..\..\Common\CListCtrl\ListCtrlEx.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\list_data.h">
-      <Filter>Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\VtListCtrlEx.h">
+    <ClInclude Include="..\..\Common\colors.h">
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\EditCell.h">
-      <Filter>Common</Filter>
+      <Filter>Common\VtListCtrlEx</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\HeaderCtrlEx.h">
-      <Filter>Common</Filter>
+      <Filter>Common\VtListCtrlEx</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Common\colors.h">
-      <Filter>Common</Filter>
+    <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\list_data.h">
+      <Filter>Common\VtListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\CListCtrl\CVtListCtrlEx\VtListCtrlEx.h">
+      <Filter>Common\VtListCtrlEx</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupDlg.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -89,20 +95,23 @@
     <ClCompile Include="..\..\Common\CListCtrl\ListCtrlEx.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Common\CListCtrl\CVtListCtrlEx\VtListCtrlEx.cpp">
+    <ClCompile Include="..\..\Common\colors.cpp">
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Common\CListCtrl\CVtListCtrlEx\EditCell.cpp">
-      <Filter>Common</Filter>
+      <Filter>Common\VtListCtrlEx</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Common\CListCtrl\CVtListCtrlEx\HeaderCtrlEx.cpp">
-      <Filter>Common</Filter>
+      <Filter>Common\VtListCtrlEx</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Common\CListCtrl\CVtListCtrlEx\list_data.cpp">
-      <Filter>Common</Filter>
+      <Filter>Common\VtListCtrlEx</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Common\colors.cpp">
-      <Filter>Common</Filter>
+    <ClCompile Include="..\..\Common\CListCtrl\CVtListCtrlEx\VtListCtrlEx.cpp">
+      <Filter>Common\VtListCtrlEx</Filter>
+    </ClCompile>
+    <ClCompile Include="PopupDlg.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
